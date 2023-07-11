@@ -1,5 +1,5 @@
 import getPerformaceBaseTest from "../utils/performace-base-factory";
-import { tags, tagName } from "../utils/TestFilter.js";
+import { tags, tagName } from "../utils/Test-Filter";
 
 const test = getPerformaceBaseTest([
   { analyzeByBrowser: true, disableAppendToExistingFile: false },
