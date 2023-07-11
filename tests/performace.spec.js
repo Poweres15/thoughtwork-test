@@ -1,5 +1,5 @@
 import getPerformaceBaseTest from "../utils/performace-base-factory";
-import { tags, tagName } from "../utils/TestFilter";
+import { tags, tagName } from "../utils/TestFilter.js";
 
 const test = getPerformaceBaseTest([
   { analyzeByBrowser: true, disableAppendToExistingFile: false },
@@ -10,7 +10,6 @@ test(
   tags([tagName.PERFORMACE], "startup performance"),
   async ({ page, performance }) => {
     performance.sampleStart("GH-startup");
-    console.log("repeat");
     await page.goto("http://github.com/");
     performance.sampleEnd("GH-startup");
 

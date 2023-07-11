@@ -1,4 +1,4 @@
-import { tags, tagName } from "../utils/TestFilter";
+import { tags, tagName } from "../utils/TestFilter.js";
 import { test, chromium } from "@playwright/test";
 import JsonPlaceholderPage from "../Pagefactory/Pagerepository/JsonPlaceholderPage";
 
