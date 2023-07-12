@@ -14,10 +14,10 @@ automation tests for thoughtwork assessment
 # How to run with specific test scope
 
 Performace testing
-`npm playwright test --grep @performace`
+`npx playwright test --grep @performace --repeat-each=3`
 
 API and Backend testing
-`npm playwright test --grep @backend`
+`npx playwright test --grep @backend --project=chromium`
 
 functional tesing
-`npm playwright test --grep @functional`
+`npx playwright test --grep @functional`

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "allure:open": "allure generate allure-results -o allure-report --clean &&  allure open allure-report"
+    "allure:open": "allure generate allure-results -o allure-report --clean &&  allure open allure-report",
+    "allure:clean": "rm -rf allure-results"
   },
   "keywords": [],
   "author": "",

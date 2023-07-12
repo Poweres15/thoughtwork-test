@@ -6,6 +6,7 @@ export const tagName = {
   PERFORMACE: "@performace",
   BACKEND: "@backend",
   FUNTIONAL: "@functional",
+  UI: "@ui",
 };
 
 export function envToTag(tagString) {

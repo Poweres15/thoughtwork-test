@@ -1,10 +1,4 @@
-import {
-  expect,
-  request,
-  APIRequestContext,
-  APIResponse,
-  Page,
-} from "@playwright/test";
+import { expect, request } from "@playwright/test";
 
 export default class APIActions {
   constructor(page, cacheContext = {}) {
@@ -23,15 +17,21 @@ export default class APIActions {
     return this.cacheContext[baseURL];
   }
 
-  async verifySuccessResponseAndReturnData(response) {
+  async verifySuccessResponse(response) {
     await expect(response).toBeOK();
-    const responseData = await response.json();
-    return responseData;
   }
 
   async GET(endPoint, query) {
     const requestContext = await this.getAndCacheContext(endPoint);
-    const response = await requestContext.get(`${endPoint}${query}`);
-    return await this.verifySuccessResponseAndReturnData(response);
+    const response = await requestContext.get(query);
+    await this.verifySuccessResponse(response);
+    return response;
+  }
+
+  async POST(endPoint, query, form) {
+    const requestContext = await this.getAndCacheContext(endPoint);
+    const response = await requestContext.post(query, { form });
+    await this.verifySuccessResponse(response);
+    return response;
   }
 }

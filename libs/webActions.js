@@ -10,7 +10,7 @@ export default class WebActions {
   async waitForElementToBeVisible(locator, options = {}) {
     return await this.page.waitForSelector(locator, {
       state: "visible",
-      timeout: options?.timeout | this._waitElementTimeout,
+      timeout: options?.timeout | 3000,
     });
   }
 
@@ -24,5 +24,9 @@ export default class WebActions {
   async enterElementText(locator, text) {
     await this.waitForElementToBeVisible(locator);
     await this.page.fill(locator, text);
+  }
+
+  async visit(url, options = {}) {
+    await this.page.goto(url, options);
   }
 }
