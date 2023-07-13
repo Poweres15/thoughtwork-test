@@ -48,9 +48,12 @@ test.describe("functional tesing", () => {
   );
 
   test(
-    tags([tagName.FUNTIONAL], "Valid Date with avaliable seat with promotion"),
+    tags(
+      [tagName.FUNTIONAL],
+      "Valid Date with avaliable seat with promotion 90 percentage"
+    ),
     async () => {
-      const { code, discountPercentage } = generatePromitionFromFirstDigit(2);
+      const { code, discountPercentage } = generatePromitionFromFirstDigit(9);
       await marsAirPage.fillSearchFormAndSubmit(
         MONTH_OPTIONS.JULY,
         MONTH_OPTIONS.DECEMBER_NEXT_TWO_YEAR,

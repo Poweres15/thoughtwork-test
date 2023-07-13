@@ -1,5 +1,5 @@
 export function generatePromitionFromFirstDigit(number) {
-  const lastDigit = typeof number !== "number" ? 1 : number + 1 + 1;
+  const lastDigit = typeof number !== "number" ? 1 : (number + 1 + 1) % 10;
   const discountPercentage =
     typeof number !== "number" ? "00%" : `${number * 10}%`;
 
